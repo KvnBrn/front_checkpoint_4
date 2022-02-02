@@ -1,0 +1,32 @@
+.gradient-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: auto;
+  position: relative;
+  margin: 2rem;
+  padding: 0.5rem;
+  background:  rgb(5, 6, 45);
+  background-clip: padding-box;
+  border-radius: 8px;
+}
+.gradient-box:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -10px;
+  border-radius: inherit;
+  background: linear-gradient(230.46deg, #5F5FF3 -2.98%, #B67DFF 68.14%, #FF83CD 104.54%);
+}
+.Game img {
+  width: 300px;
+  height: 150px;
+  border-radius: 8px;
+  cursor: pointer;
+}

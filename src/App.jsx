@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Fragment, useEffect, useState } from 'react';
 import axios from "axios";
-
-import { Home } from './components/Home.jsx';
+import VideoGameList from './components/VideoGameList.jsx';
+import VideoGameDetails from './components/VideoGameDetails.jsx';
 import { Login } from './components/Login.jsx';
 import { Register } from './components/Register.jsx';
 import { DashboardAdmin } from './components/DashboardAdmin.jsx';
@@ -39,7 +39,7 @@ const App = () => {
     setUser({});
     window.location.href = "/";
   }
-  console.log(user)
+  
   return (
     <>
       <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
@@ -61,7 +61,8 @@ const App = () => {
               }
             </nav>
             <Routes>
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" element={<VideoGameList />} />
+              <Route path="/video_games/:id" element={<VideoGameDetails />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/admin" element={<ProtectedRoute/>}>
