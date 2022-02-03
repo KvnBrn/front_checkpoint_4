@@ -7,7 +7,7 @@ import VideoGameDetails from './components/VideoGameDetails.jsx';
 import Contact from "./components/Contact.jsx";
 import { Login } from './components/Login.jsx';
 import { Register } from './components/Register.jsx';
-import { DashboardAdmin } from './components/DashboardAdmin.jsx';
+import { Admin } from './components/Admin.jsx';
 import { AuthContext } from "./contexts/AuthContext.js";
 import { UserContext } from "./contexts/UserContext.js";
 import { ProtectedRoute } from "./protected/ProtectedRoute.js";
@@ -55,7 +55,7 @@ const App = () => {
               {
                 isAuthenticated ? 
                 <>
-                { user && user.role === 1 && <Link to="admin" className="mx-3">Dashboard Admin</Link>}
+                { user && user.role === 1 && <Link to="admin" className="mx-3">Admin</Link>}
                 <button className="float-end btn btn-danger" onClick={() => logout()}>Déconnexion</button> 
                 </>
                 :
@@ -73,7 +73,7 @@ const App = () => {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/admin" element={<ProtectedRoute/>}>
-                <Route path="/admin" element={<DashboardAdmin />} />
+                <Route path="/admin" element={<Admin />} />
               </Route>
             </Routes>
           </BrowserRouter>

@@ -24,7 +24,7 @@ const VideoGameDetails = () => {
         <img src={gameDetails?.image} alt={gameDetails?.name} />
         <div className="menu-details">
           <div className="details">
-            <h3 className='detail-name'>Jeu :</h3>
+            <h3 className='detail-name'>Titre :</h3>
             <h4 className='detail-cat'>Catégorie(s) :</h4>
             <h4 className='detail-rating'>Ma note :</h4>
             <h4 className='detail-description'> Description :</h4>
