@@ -1,10 +1,12 @@
 import axios from 'axios';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../contexts/AuthContext';
 import '../styles/videoGame.css';
 
-const VideoGame = ({ videoGame, isAuthenticated, user }) => {
+const VideoGame = ( {videoGame, user} ) => {
   const [error, setError] = useState('');
+  const { isAuthenticated } = useContext(AuthContext);
 
   const deleteVideoGame = (id) => {
     axios.delete(`http://localhost:8000/${id}`).then(({ data }) => {
@@ -15,6 +17,7 @@ const VideoGame = ({ videoGame, isAuthenticated, user }) => {
       }
     })
   }
+
   return (
     <div className="Game">
       <div className="gradient-box">
