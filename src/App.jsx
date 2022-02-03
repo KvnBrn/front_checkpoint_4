@@ -11,6 +11,7 @@ import { DashboardAdmin } from './components/DashboardAdmin.jsx';
 import { AuthContext } from "./contexts/AuthContext.js";
 import { UserContext } from "./contexts/UserContext.js";
 import { ProtectedRoute } from "./protected/ProtectedRoute.js";
+import './styles/app.css';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -47,7 +48,7 @@ const App = () => {
       <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
         <UserContext.Provider value={{ user, setUser }}>
           <BrowserRouter>
-            <nav>
+            <nav className="nav">
               <Link to="/" className="mx-3">Accueil</Link>
               <Link to="/video_games" className="mx-3">Mes jeux</Link>
               <Link to="/contact" className="mx-3">Contact</Link>
