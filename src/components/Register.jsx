@@ -25,20 +25,22 @@ export const Register = () => {
     }
     
     return (
-        <div className="row">
-            <h2 className="text-center">Register</h2>
-            <form className="col-md-4 col-md-offset-4" onSubmit={handleSubmit}>
-                {error && <p className="text-danger">{error}</p>}
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="text" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                </div>
-                <button type="submit">Register</button>
-            </form>
+        <div className="container text-white">
+            <div className="row text-center p-5">
+                <h2 className="text-center mb-5">S'enregistrer</h2>
+                <form className="col-lg-6 col-md-6 col-xs-12 mx-auto" onSubmit={handleSubmit}>
+                    {error && <p className="alert alert-danger">{error}</p>}
+                    <div className="mb-3">
+                        <label htmlFor="email" className="form-label">Email</label>
+                        <input type="text" className="" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="password" className="form-label">Password</label>
+                        <input type="password" className="" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <button type="submit" className="button-65 m-auto">Enregistrer</button>
+                </form>
+            </div>
         </div>
     )
 }

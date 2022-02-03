@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Fragment, useEffect, useState } from 'react';
 import axios from "axios";
+import Home from './components/Home.jsx';
 import VideoGameList from './components/VideoGameList.jsx';
 import VideoGameDetails from './components/VideoGameDetails.jsx';
+import Contact from "./components/Contact.jsx";
 import { Login } from './components/Login.jsx';
 import { Register } from './components/Register.jsx';
 import { DashboardAdmin } from './components/DashboardAdmin.jsx';
@@ -46,7 +48,9 @@ const App = () => {
         <UserContext.Provider value={{ user, setUser }}>
           <BrowserRouter>
             <nav>
-              <Link to="/" className="mx-3">Home</Link>
+              <Link to="/" className="mx-3">Accueil</Link>
+              <Link to="/video_games" className="mx-3">Mes jeux</Link>
+              <Link to="/contact" className="mx-3">Contact</Link>
               {
                 isAuthenticated ? 
                 <>
@@ -55,13 +59,15 @@ const App = () => {
                 </>
                 :
                   <>
-                    <Link to="/login" className="mx-3">Login</Link>
-                    <Link to="/register" className="mx-3">Register</Link>
+                    <Link to="/login" className="mx-3">Se connecter</Link>
+                    <Link to="/register" className="mx-3">S'enregistrer</Link>
                   </>
               }
             </nav>
             <Routes>
-              <Route exact path="/" element={<VideoGameList />} />
+              <Route exact path="/" element={<Home />} />
+              <Route path="/video_games" element={<VideoGameList />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/video_games/:id" element={<VideoGameDetails />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
