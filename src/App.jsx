@@ -17,8 +17,8 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
 
-  const token = localStorage.getItem("token");
   useEffect(() => {
+    const token = localStorage.getItem("token");
     if (token) {
       axios.get('http://localhost:8000/security/user-is-auth', {
         headers: {
@@ -35,7 +35,6 @@ const App = () => {
       });
     }
   }, [])
-  console.log(token);
 
   const logout = () => {
     localStorage.clear();

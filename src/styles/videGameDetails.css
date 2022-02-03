@@ -1,19 +1,20 @@
 .background-details {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin: 5rem 0;
+  margin: 2rem 0 5rem;
 }
 .background-details img {
-  width: 800px;
+  width: 700px;
   height: auto;
   margin: 1rem 0;
   border-radius: 8px;
 }
 .menu-details {
   display: flex;
-  justify-content: space-evenly;
   width: 700px;
+  padding: 1rem;
   position: relative;
   background:  rgb(5, 6, 45);
   background-clip: padding-box;
@@ -37,61 +38,34 @@
   display: flex;
   flex-direction: column;
   font-size: larger;
+  width: 33%;
 }
-.detail-name {
-  width: 100%;
-  color: white;
-}
-.detail-name-res {
-  width: 100%;
-  background: linear-gradient(#AF40FF, #5B42F3 ,#00DDEB);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.detail-released {
-  width: 100%;
-  color: white;
-}
-.detail-released-res {
-  width: 100%;
-  background: linear-gradient(#AF40FF, #5B42F3 ,#00DDEB);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.detail-rating {
-  width: 100%;
-  color: white;
-}
-.detail-rating-res {
-  width: 100%;
-  background: linear-gradient(#AF40FF, #5B42F3 ,#00DDEB);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.detail-genres {
-  width: 100%;
-  color: white;
-}
-.detail-genres-res {
+.details-res {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: larger;
+  width: 66%;
+  text-align: justify;
+}
+.detail-name,
+.detail-cat,
+.detail-rating,
+.detail-description {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+  color: white;
+}
+.detail-name-res,
+.detail-cat-res,
+.detail-rating-res,
+.detail-description-res {
   width: 100%;
   background: linear-gradient(#AF40FF, #5B42F3 ,#00DDEB);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-.game-gallery {
-  display: flex;
-  align-items: center;
-  max-width: 1500px;
-  height: 370px;
-  margin-left: 10%;
-  margin-bottom: 5rem;
-  overflow-x: auto;
 }
 .game-gallery img{
   width: 500px;
