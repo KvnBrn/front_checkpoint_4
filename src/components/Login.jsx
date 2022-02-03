@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const url = "http://localhost:8000/security/login";
@@ -22,14 +23,17 @@ export const Login = () => {
                     }
                 })
         } else {
-            setError("Please enter email and password");
+            setError("Merci de renseigner votre email et votre mot de passe");
         }
     }
 
     return (
         <div className="container text-white">
             <div className="row text-center p-5">
-                <h2 className="text-center mb-5">Se connecter</h2>
+                <h2 className="text-center mb-3">Se connecter</h2>
+                <h6 className="text-center mb-5">Pas encore de compte ? Rendez-vous 
+                    <Link to="/register"> ici</Link>
+                </h6>
                 <form className="col-lg-6 col-md-6 col-xs-12 mx-auto" onSubmit={handleSubmit}>
                     {error && <p className="alert alert-danger">{error}</p>}
                     <div className="mb-3">

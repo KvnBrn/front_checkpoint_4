@@ -30,3 +30,39 @@
   border-radius: 8px;
   cursor: pointer;
 }
+@media (max-width: 1024px) {
+  .Game img {
+    width: 250px;
+    height: 130px;
+  }
+}
+@media (max-width: 768px) {
+  .Game img {
+    width: 170px;
+    height: 100px;
+  }
+}
+@media (max-width: 425px) {
+  .Game img {
+    width: 150px;
+    height: 80px;
+  }
+  .gradient-box {
+    margin: 1rem;
+  }
+}
+@media (max-width: 375px) {
+  .Game img {
+    width: 130px;
+    height: 70px;
+  }
+}
+@media (max-width: 320px) {
+  .Game img {
+    width: 170px;
+    height: 100px;
+  }
+  .gradient-box {
+    margin: 2rem;
+  }
+}

@@ -17,7 +17,7 @@ const VideoGameList = () => {
       };
 
     return (
-        <div className="GameList">
+        <div className="game-list">
             <div className="header-list">
                 {allVideoGames?.map((videoGame) => (
                     <VideoGame key={videoGame.id} videoGame={videoGame} />

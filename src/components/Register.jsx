@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const url = "http://localhost:8000/security/register";
@@ -21,13 +22,16 @@ export const Register = () => {
                     setPassword("");
                 } 
             })
-        } else setError("All fields are required");
+        } else setError("Merci de remplir tous les champs");
     }
     
     return (
         <div className="container text-white">
             <div className="row text-center p-5">
-                <h2 className="text-center mb-5">S'enregistrer</h2>
+                <h2 className="text-center mb-3">S'enregistrer</h2>
+                <h6 className="text-center mb-5">Vous avez déjà un compte ? Rendez-vous
+                    <Link to="/login"> ici </Link>
+                </h6>
                 <form className="col-lg-6 col-md-6 col-xs-12 mx-auto" onSubmit={handleSubmit}>
                     {error && <p className="alert alert-danger">{error}</p>}
                     <div className="mb-3">

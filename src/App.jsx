@@ -17,8 +17,8 @@ const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState({});
 
+  const token = localStorage.getItem("token");
   useEffect(() => {
-    const token = localStorage.getItem("token");
     if (token) {
       axios.get('http://localhost:8000/security/user-is-auth', {
         headers: {
@@ -35,6 +35,7 @@ const App = () => {
       });
     }
   }, [])
+  console.log(token);
 
   const logout = () => {
     localStorage.clear();
@@ -56,7 +57,7 @@ const App = () => {
                 isAuthenticated ? 
                 <>
                 { user && user.role === 1 && <Link to="admin" className="mx-3">Dashboard Admin</Link>}
-                <button className="float-end btn btn-danger" onClick={() => logout()}>Logout</button> 
+                <button className="float-end btn btn-danger" onClick={() => logout()}>Déconnexion</button> 
                 </>
                 :
                   <>
